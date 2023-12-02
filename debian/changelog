@@ -1,3 +1,9 @@
+vim-fugitive (3.7-125-g46eaf89-2) unstable; urgency=medium
+
+  * Match git diff colors
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Sat, 02 Dec 2023 16:03:15 -0500
+
 vim-fugitive (3.7-125-g46eaf89-1) unstable; urgency=medium
 
   [ Tim Pope ]
