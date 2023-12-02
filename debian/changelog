@@ -1,5 +1,167 @@
-vim-fugitive (3.7-125-g46eaf89-1) UNRELEASED; urgency=medium
+vim-fugitive (3.7-125-g46eaf89-1) unstable; urgency=medium
 
-  * Initial Release.
+  [ Tim Pope ]
+  * Drop support for `autocmd User Fugitive`
+  * Fix syntax error
+  * Drop support for Vim older than 7.4
+  * Define global <Plug> maps regardless of g:fugitive_no_maps
+  * Extract helper to initialize b:git_dir
+  * Set b:git_dir in FugitiveEditor buffers
+  * Drop obsolete public functions
+  * Leverage FugitiveActualDir() abstraction
+  * Improve performance of FugitiveStatusline()
+  * Add error stubs for old fugitive#repo() object
+  * DWIM for % and # in URL argument
+  * Fix error message on fugitive#repo().config()
+  * Remove last vestiges of :Gread!
+  * Optimize inline expansion for large diffs
+  * Loosen autocommand patterns for fugitive:// URLs
+  * Partially support ".git" files and symlinks without core.worktree
+  * Fix inconsistent whitespace matching in regexps
+  * Include "\ No newline at end of file" in status buffer
+  * Handle quoted filenames in diff --git headers
+  * Extract helper to determine position in diff hunk
+  * Remove :Gcommit family of error stubs
+  * Provide :Gdrop
+  * Restore .git_dir on fugitive#repo()
+  * Cope gracefully with missing .git/index
+  * Fix :GBrowse in :Git blame window
+  * Simplify conditional around :GBrowse line number computation
+  * Delete temp files created computing :GBrowse line numbers
+  * Compute correct line numbers in blame buffer
+  * Remove redundant URL escaping in :GBrowse
+  * DWIM for :GBrowse remote-name
+  * Rework ref handing in :GBrowse
+  * Look for "fugitive_dir" as dictionary key
+  * Don't reuse status window for :Gdrop
+  * Fix Projectionist root for .git/info/projections.json
+  * Move FugitiveParse() implementation into autoload file
+  * Fix FugitiveExtractGitDir() with dict argument
 
- -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Tue, 25 Jul 2023 03:19:09 +0000
+  [ Jaehwang Jung ]
+  * Don't silence cmap
+
+  [ Tim Pope ]
+  * Use fugitive:///c:/ instead of fugitive://c:/ on win32
+  * Fix match of fugitive:////unchost/path// on win32
+  * Sync up win32 and UNIX fugitive:// regexps
+  * Encapsulate appending relative path to Fugitive URL
+  * Remove inadvertent dict function flag
+  * Fix misc errors on Vim 7.4
+  * Reject invalid URLs from GBrowse providers
+  * Correctly handle :Gedit + +SecondCommand
+  * Tease apart :Gedit argument parsing and expansion
+  * Use forward slashes for non-Fugitive URLs on win32
+  * Don't default :Gedit to cwd in empty window
+  * Accept multiple arguments to :Gdrop, like :drop
+  * URL decode FugitiveRemote().path and .user
+  * Handle URL-unsafe characters in :GBrowse API
+  * Use URL encoding for Fugitive URLs
+  * Fix automatic status reload when at fugitive:// URL
+  * URL encode "="
+  * Don't use "~" for in-band signaling in :GBrowse API
+  * Drop URL encoding workaround from :GBrowse API
+
+  [ yut23 ]
+  * Fix `[c` from the first hunk of a file
+  * Fix backward navigation from the middle of a line
+
+  [ Tim Pope ]
+  * Move status buffer to fugitive:// URL
+  * Account for ch_status() == 'fail'
+  * Drop g:fugitive_legacy_quoting
+  * Consistently handle missing command jobs across platforms
+  * Restore popular fugitive#repo() functions
+  * Fix broken blame maps
+  * Add deprecation warning on editing .git/index
+  * Avoid invalid glob during tab complete
+  * Remove ~ and P maps from blame documentation
+  * Account for escaping differences when expanding on win32
+
+  [ Ernst Widerberg ]
+  * Fix typo
+
+  [ Zhizhen He ]
+  * Fix typo
+
+  [ Eric Milford ]
+  * Tighten match for commit under cursor
+
+  [ Maksim Odnoletkov ]
+  * Fix parsing of diff hunk headers with omitted length
+
+  [ Tim Pope ]
+  * Improve horizontal scrolling performance of :Git blame
+  * Allow PTY for paginated shortlog, to prevent stdin read
+  * Better error message when :GBrowse remote not found
+  * Make statusline redraw less aggressive
+  * Support folding sections
+
+  [ Ben Morgan ]
+  * Fix Gdelete error message
+
+  [ Tim Pope ]
+  * Focus correct window after gq in :Git blame
+  * Fix typo
+  * Undo inadvertent revert
+  * Drop g:fugitive_defer_to_existing_maps
+  * Avoid blurring status when :Gedit argument parsing throws an error
+  * Tighten matches for URL buffer names
+  * Avoid narrow :Git subcommand splits in blame windows
+  * Make commit/rebase maps available in blame buffers
+  * Don't show "Unpushed to *" if no remotes
+  * Retool retrieval of push/pull refs in status buffer
+  * Fall back to "Unpushed to *" when no upstream head is found
+  * Refactor retrieval of push/pull refs in status buffer, again
+  * When push ref is missing, show unpushed upstream commits instead
+
+  [ yasuda ]
+  * Fix dropped quote of `entries`
+
+  [ Tim Pope ]
+  * Default pull ref to branch of same name
+  * Don't default to origin remote in bare repos
+  * Fix duplicate "Unpulled" section when push and pull match
+  * Reject remotes without appropriate push/fetch key
+
+  [ Karl Yngve Lervåg ]
+  * Use the dir variable in fugitive#Head
+
+  [ Tim Pope ]
+  * Provide default merge head for "." remote
+  * Guard against missing win_id2win on Vim 7.4
+  * Document czs
+  * Restore status commit lists for "." remote
+  * Try harder to match diff headers with ambiguous spacing
+  * Support :GBrowse with paths outside current repo
+  * Allow ftplugin maps to override historical buffer maps
+
+  [ David Briscoe ]
+  * Always fire BufReadStatus's autocmd
+
+  [ Tim Pope ]
+  * Support netrw buffers with blank buffer names
+  * Show current revert/cherry-pick in status buffer
+  * Never jump to invalid entry after quickfix command
+  * Clarify behavior of :G summary window
+  * Discourage use of P and ~ in blame window.
+  * Clean up optional arguments around status reload
+  * Avoid double reload of status window triggered by BufEnter
+  * Fix p map in blame buffers
+  * Close stdin for nvim jobs, to match vim
+  * Don't bother with `sleep!`
+  * Decouple s:DirCheck() from s:VersionCheck()
+  * Expire cached blank Git dir on active Fugitive invocation
+  * Respect GIT_INDEX_FILE when diffing for status buffer
+  * Only diff known changed files for status
+  * Avoid implicit repository when rendering status buffer
+  * Handle status diff file arguments more rigorously
+  * Decouple running git-status from parsing output
+  * Salvage :Ggrep ... commit:path/
+  * Prototype "reverse :GBrowse"
+  * Fix variable scope
+
+  [ Dimitry Ishenko ]
+  * Add Debian packaging
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Sat, 02 Dec 2023 15:53:07 -0500
