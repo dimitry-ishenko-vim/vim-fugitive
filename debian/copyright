@@ -1,0 +1,11 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: fugitive.vim
+Source: https://github.com/tpope/vim-fugitive
+
+Files: *
+Copyright: 2023 Tim Pope <tpope@tpope.net>
+License: Vim
+
+Files: debian/*
+Copyright: 2023 Dimitry Ishenko <dimitry.ishenko@gmail.com>
+License: GPL-3.0+

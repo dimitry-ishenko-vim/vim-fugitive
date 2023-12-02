@@ -1,0 +1,3 @@
+autoload doc ftdetect ftplugin plugin syntax usr/share/vim-fugitive
+debian/fugitive.vim etc/skel/.vim/plugin
+debian/fugitive.vim etc/skel/.config/nvim/plugin

@@ -1,0 +1,20 @@
+Source: vim-fugitive
+Section: editors
+Priority: optional
+Maintainer: Dimitry Ishenko <dimitry.ishenko@gmail.com>
+Build-Depends:
+ debhelper-compat (= 12),
+ dh-vim-addon
+Standards-Version: 4.6.0
+Homepage: https://github.com/tpope/vim-fugitive
+Vcs-Browser: https://github.com/dimitry-ishenko-vim/vim-fugitive
+Vcs-Git: https://github.com/dimitry-ishenko-vim/vim-fugitive.git
+Rules-Requires-Root: no
+
+Package: vim-fugitive
+Architecture: all
+Depends: git, ${misc:Depends}, ${vim-addon:Depends}
+Description: A git wrapper so awesome, it should be illegal
+ Fugitive is the premier Vim plugin for Git. Or maybe it's the premier Git
+ plugin for Vim? Either way, it's "so awesome, it should be illegal". That's
+ why it's called Fugitive.
