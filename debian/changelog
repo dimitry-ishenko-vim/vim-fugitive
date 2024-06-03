@@ -1,3 +1,55 @@
+vim-fugitive (2024.05.19-4f59455d2-1) unstable; urgency=medium
+
+  * Buffer output when using the pager
+  * Fix write to index on Vim 7
+  * Return first, not last, value for FugitiveConfigGet()
+  * Relay stdin in s:StdoutFile() on Vim 7
+  * Fix handling of Include in SSH config
+  * Support edit script when temp dir name contains space
+  * Fix misaligned output of :G blame -s
+  * Avoid resetting 'last accessed tab' status
+  * Always use absolute path for :Ggrep quickfix list
+  * Defer initializing b:fugitive_files until rendering status
+  * Reorder status BufReadCmd
+  * Remove error handler from status BufReadCmd
+  * Avoid tabpagenr('#') on Vim versions without it
+  * Add corresponding nvim check for tabpagenr('#')
+  * Allow for numeric tab argument in <mods>
+  * Update tabpagenr('#') version constraint to fix ml_get error
+  * Fix shortened :call command
+  * Give status exec result variable a clearer name
+  * Replace status buffer contents atomically
+  * Move props into stat
+  * Avoid settabvar()
+  * Don't assume default value for branch.*.merge
+  * Move pull_type into stat
+  * Move push_remote and fetch_remote into stat
+  * Introduce stat.push and stat.merge
+  * Use fewer buffer variables for status buffer
+  * For push map, never push to fetch remote
+  * Avoid reuse of winfixbuf windows
+  * Set winfixbuf on blame windows
+  * Set winfixbuf on status windows
+  * Fix typo for `advice.statusHints`
+  * Fix misfire of User FugitivePager
+  * Revert "Set winfixbuf on status windows"
+  * Restore winfixbuf consideration in status blur
+  * Fix TempReadPost returning 0
+  * Support Git flags inside of aliases
+  * Support :Git difftool --check
+  * Fix syntax error in autoload/fugitive.vim
+  * Support ~ in ssh config include
+  * Ignore missing ssh include files
+  * Filter out bold/underline typesetting in man output
+  * Normalize path before quoting it
+  * Make push map available on P
+  * Fix :Git difftool -y
+  * Fix :Git difftool without -y
+  * Use rev-parse to get abbrev length for status buffer
+  * Update fugitive.vim
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Sun, 02 Jun 2024 23:12:55 -0400
+
 vim-fugitive (3.7-125-g46eaf89-2) unstable; urgency=medium
 
   * Match git diff colors
