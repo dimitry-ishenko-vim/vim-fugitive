@@ -1,3 +1,27 @@
+vim-fugitive (2024.11.20-320b18fba-1) unstable; urgency=medium
+
+  [ Kevin Hwang ]
+  * Fix tab Gdiffsplit opening empty buffer
+
+  [ Tim Pope ]
+  * Use keepalt for diff maps
+
+  [ Julio B ]
+  * Disable modelines for status buffers
+
+  [ Tim Pope ]
+  * Use nvim vim.ui.open as a fallback
+  * Use callback based workflow for status buffer
+
+  [ David Briscoe ]
+  * Format the full body instead of separating title
+
+  [ Tim Pope ]
+  * Clarify dq behavior
+  * Rearrange :Git documentation
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Thu, 28 Nov 2024 23:21:04 -0500
+
 vim-fugitive (2024.05.19-4f59455d2-1) unstable; urgency=medium
 
   * Buffer output when using the pager
