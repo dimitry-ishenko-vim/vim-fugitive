@@ -1,3 +1,18 @@
+vim-fugitive (2025.02.19-1) unstable; urgency=medium
+
+  [ Tim Pope ]
+  * Remove antiquated `a` map
+  * Drop */# maps in visual mode
+  * Add cW map as commit --fixup=reword:
+  * Replace cA map with cn
+  * Fix help tag for g?
+  * Make :GRename ./ and ../ respect parent dir of current file
+
+  [ embedded ]
+  * Use netrw#Open if available (#2361)
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Fri, 28 Feb 2025 19:17:45 -0500
+
 vim-fugitive (2024.11.20-320b18fba-1) unstable; urgency=medium
 
   [ Kevin Hwang ]
